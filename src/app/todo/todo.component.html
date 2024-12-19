@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>To-Do List</h1>
+  
+    <div class="add-activity">
+      <input type="text" [(ngModel)]="newActivity" placeholder="Add new activity...">
+      <button class="add-btn" (click)="addActivity()">Add</button>
+    </div>
+  
+    <div class="section">
+      <h2>Active Activities</h2>
+      <div class="activities">
+        <div class="activity-item" *ngFor="let activity of activeActivities">
+          <span>{{ activity }}</span>
+          <div class="activity-buttons">
+            <button class="complete-btn" (click)="completeActivity(activity)">Complete</button>
+            <button class="delete-btn" (click)="deleteActivity(activity)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="section completed-section">
+      <h2>Completed Activities</h2>
+      <div class="activities">
+        <div class="activity-item" *ngFor="let activity of completedActivities">
+          <span>{{ activity }}</span>
+          <button class="delete-btn" (click)="deleteCompletedActivity(activity)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
